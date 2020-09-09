@@ -1,0 +1,27 @@
+How to run my parallel system.
+
+Flags:
+Like the previous projects, by default my program runs in sequential mode.
+To enable parallelism set the -p flag equal to the number of threads you
+want. Setting -p to a negative number will set the number of threads equal
+to runtime.NumCPU(). In addition to -p I also added the -bsp flag. In
+sequential mode, -bsp is ignored. In parallel mode, -bsp means that the
+writing the current frame and updating the next frame happens concurrently.
+BSP mode is supported by my barrier implementation which uses channels to
+synchronize goroutines.
+
+Input:
+Input is similar to previous projects, json objects via stdin. I have provided
+some test files with sample input. I recommend piping in input via the command line.
+
+Entry point:
+The main entry point into the program is driver/driver.go. Run the program as
+follows: `go run src/driver/driver.go -p=8 -bsp < src/test.txt`
+
+JavaScript speedup graph tests:
+If you would like to run the tests I wrote to produce the speedup graph you need a
+recent version of NodeJS as well as npm. Run `npm install` on first use and run
+`go build driver.go` to compile an executable from within the src/driver directory.
+Then run generate_timing_results.js. This outputs the timing_results json files
+(I included the files my computer produced.) After this you can run generate_speedup_graph.js
+which will output a speedup_graph.png.

@@ -1,0 +1,3 @@
+{"size": 64, "frames": 200, "delay": 5, "simType": "random", "diffusion": 100, "viscosity": 1, "outPath": "Fluid.gif", "fadeOut": true}
+{"size": 256, "frames": 200, "delay": 1, "simType": "random", "diffusion": 100, "viscosity": 1, "outPath": "Fluid2.gif", "repeat":500, "fadeOut": true}
+{"size": 1024, "frames": 100, "delay": 30, "simType": "random", "diffusion": 1000, "viscosity": 0.0000001, "outPath": "Fluid3.gif", "repeat": 100}
